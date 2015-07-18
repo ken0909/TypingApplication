@@ -4,6 +4,8 @@ import java.awt.Button;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.text.DecimalFormat;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -21,7 +23,7 @@ import action.WriteLogs;
  * @author shibayama
  *
  */
-public class MakeWindow extends JFrame implements ActionListener {
+public class MakeWindow extends JFrame implements ActionListener, KeyListener {
 
 	/* ヘッドライン */
 	private JLabel headLabel;
@@ -77,13 +79,38 @@ public class MakeWindow extends JFrame implements ActionListener {
 		WriteLogs.writeLog("アプリ起動");
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void start() {
 		headLabel.setText("Started");
 		start = System.nanoTime();
 		new Timer().schedule(new MeasureTime(), 0, 50);
 
 		WriteLogs.writeLog("ゲーム開始");
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		start();
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		char key = e.getKeyChar();
+		if (key == KeyEvent.VK_ESCAPE) {
+			WriteLogs.writeLog("ゲームリセット");
+		}
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		char key = e.getKeyChar();
+		if (key == KeyEvent.VK_ESCAPE) {
+			WriteLogs.writeLog("ゲームリセット");
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+
 	}
 
 	/**
