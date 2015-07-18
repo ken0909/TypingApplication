@@ -79,6 +79,10 @@ public class MakeWindow extends JFrame implements ActionListener, KeyListener {
 		WriteLogs.writeLog("アプリ起動");
 	}
 
+	/**
+	 * ゲーム開始メソッド<br>
+	 * スタートボタンを押すか、Enterキーを押すと呼び出される
+	 */
 	public void start() {
 		headLabel.setText("Started");
 		start = System.nanoTime();
