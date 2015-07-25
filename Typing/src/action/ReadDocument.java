@@ -20,6 +20,7 @@ public class ReadDocument {
 	/* 英単語csvのパス */
 	private File englishFile = new File("resources/vocabulary.csv");
 
+	/* プログラミング単語csvのパス */
 	private File programingFile = new File("resources/program.csv");
 
 	/* ログ */

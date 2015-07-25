@@ -22,3 +22,23 @@
 [2015/07/25 22:30:04] Called Method [getSentence] class:ReadDocument
 [2015/07/25 22:30:04] ゲームリセット
 [2015/07/25 22:30:04] ゲーム終了
+[2015/07/25 23:19:13] Called Method [readCSVFile] class:ReadDocument
+[2015/07/25 23:19:13] Called Method [getSentence] class:ReadDocument
+[2015/07/25 23:19:14] アプリ起動
+[2015/07/25 23:20:25] Called Method [readCSVFile] class:ReadDocument
+[2015/07/25 23:20:25] Called Method [getSentence] class:ReadDocument
+[2015/07/25 23:20:26] アプリ起動
+[2015/07/25 23:20:32] ゲーム開始
+[2015/07/25 23:22:29] Called Method [readCSVFile] class:ReadDocument
+[2015/07/25 23:22:29] Called Method [getSentence] class:ReadDocument
+[2015/07/25 23:22:29] ゲームリセット
+[2015/07/25 23:22:29] ゲーム終了
+[2015/07/25 23:23:22] Called Method [readCSVFile] class:ReadDocument
+[2015/07/25 23:23:22] Called Method [getSentence] class:ReadDocument
+[2015/07/25 23:23:22] アプリ起動
+[2015/07/25 23:24:30] Called Method [readCSVFile] class:ReadDocument
+[2015/07/25 23:24:30] Called Method [getSentence] class:ReadDocument
+[2015/07/25 23:24:31] アプリ起動
+[2015/07/25 23:24:40] Called Method [readCSVFile] class:ReadDocument
+[2015/07/25 23:24:40] Called Method [getSentence] class:ReadDocument
+[2015/07/25 23:24:41] アプリ起動

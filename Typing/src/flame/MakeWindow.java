@@ -2,6 +2,7 @@ package flame;
 
 import java.awt.Button;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -31,6 +32,7 @@ import action.WriteLogs;
  */
 public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 
+	/* ヘッドライン用パネル */
 	private JPanel head;
 
 	/* ヘッドライン */
@@ -72,10 +74,13 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 	/* 結果表示用パネル */
 	private JPanel result;
 
+	/* 結果ラベル */
 	private JLabel result1;
 
+	/* 結果ラベル */
 	private JLabel result2;
 
+	/* 結果ラベル */
 	private JLabel result3;
 
 	/* 結果タイム用ラベル */
@@ -137,9 +142,9 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 		this.add(missLabel);
 
 		result = new JPanel();
-		result.setBounds(400, 0, 200, 60);
+		result.setBounds(400, 0, 400, 60);
 
-		result1 = new JLabel("[Result] ");
+		result1 = new JLabel("Result ");
 		result1.setFont(new Font("Arial", Font.BOLD, 22));
 		result1.setForeground(Color.BLUE);
 
@@ -164,6 +169,7 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 		result.add(resultTime);
 		result.add(result3);
 		result.add(resultMiss);
+		result.setLayout(new FlowLayout(FlowLayout.LEFT));
 		this.add(result);
 
 		cursor = 0;
@@ -236,21 +242,33 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 	@Override
 	public void keyTyped(KeyEvent e) {
 		char key = e.getKeyChar();
+
+		/* 開始フラグがtrueで、押されたキーがEnterでない場合 */
 		if (started && key != KeyEvent.VK_ENTER) {
+
+			/* カーソル現在位置の文字と押されたキーが一致した場合カーソルを右に移動し、一文字分赤色にする */
 			if (document.charAt(cursor) == key) {
 				changeColor(doc, cursor++, 1);
+
+				/* ミスの場合はミスのカウントをインクリメントし表示する */
 			} else {
 				miss++;
 				missLabel.setText("Miss: " + String.valueOf(miss));
 			}
+			/* ミスが１００を超えたら強制終了 */
+			if (miss >= 100) {
+				reset();
+				WriteLogs.writeLog("ゲームオーバー");
+			}
+
+			/*
+			 * 文章の最後まで行ったらゲーム終了 結果タイムとミス回数を表示する
+			 */
 			if (document.length() <= cursor) {
 				resultTime.setText(format.format(elapsedTime));
 				resultMiss.setText(String.valueOf(miss));
 				reset();
 				WriteLogs.writeLog("ゲーム終了");
-			} else if (miss >= 100) {
-				reset();
-				WriteLogs.writeLog("ゲームオーバー");
 			}
 		}
 	}
@@ -258,9 +276,13 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		int key = e.getKeyCode();
+
+		/* ゲームが開始されていない状態でEnterキーが押されたらゲームスタート */
 		if (!started && key == KeyEvent.VK_ENTER) {
 			start();
 		}
+
+		/* ゲームが開始されている状態でescキーが押されたらゲーム終了 */
 		if (started && key == KeyEvent.VK_ESCAPE) {
 			reset();
 		}
@@ -272,7 +294,7 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 	}
 
 	/**
-	 * 経過時間を測定しリアルタイムで表示する内部クラス
+	 * 時間計測に関する内部クラス
 	 *
 	 * @author shibayama
 	 *
@@ -281,6 +303,8 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 
 		@Override
 		public void run() {
+
+			/* 経過時間を測定しリアルタイムで表示 */
 			long now = System.nanoTime();
 			elapsedTime = (now - start) / 1000000000f;
 			time.setText(format.format(elapsedTime));
