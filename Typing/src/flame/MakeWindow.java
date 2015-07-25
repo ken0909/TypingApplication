@@ -1,6 +1,7 @@
 package flame;
 
 import java.awt.Button;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,7 +13,12 @@ import java.util.TimerTask;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextArea;
+import javax.swing.JPanel;
+import javax.swing.JTextPane;
+import javax.swing.text.DefaultStyledDocument;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyleContext;
 
 import action.ReadDocument;
 import action.WriteLogs;
@@ -23,7 +29,9 @@ import action.WriteLogs;
  * @author shibayama
  *
  */
-public class MakeWindow extends JFrame implements ActionListener, KeyListener {
+public class MakeWindow extends JFrame implements KeyListener, ActionListener {
+
+	private JPanel head;
 
 	/* ヘッドライン */
 	private JLabel headLabel;
@@ -32,13 +40,55 @@ public class MakeWindow extends JFrame implements ActionListener, KeyListener {
 	private Button startButton;
 
 	/* 文章 */
-	private JTextArea contents;
+	private String document;
+
+	/* 文章格納コンポーネント */
+	private JTextPane contents;
 
 	/* 経過時間 */
 	private JLabel time;
 
+	/* ミス回数表示用ラベル */
+	private JLabel missLabel;
+
+	/* ミス回数 */
+	private int miss;
+
 	/* スタート時間 */
 	private long start;
+
+	/* 時間計測用オブジェクト */
+	private MeasureTime measureTime;
+
+	/* 現在のカーソルの位置 */
+	private int cursor;
+
+	/* キーイベント発動用フラグ */
+	private boolean started;
+
+	/* スタイル変更用オブジェクト */
+	private DefaultStyledDocument doc;
+
+	/* 結果表示用パネル */
+	private JPanel result;
+
+	private JLabel result1;
+
+	private JLabel result2;
+
+	private JLabel result3;
+
+	/* 結果タイム用ラベル */
+	private JLabel resultTime;
+
+	/* 結果ミス回数用ラベル */
+	private JLabel resultMiss;
+
+	/* 経過時間 */
+	private double elapsedTime;
+
+	/* 時間の表示フォーマット */
+	private DecimalFormat format;
 
 	/**
 	 * コンストラクタ ウィンドウの各種設定とコンポーネントの作成
@@ -51,22 +101,27 @@ public class MakeWindow extends JFrame implements ActionListener, KeyListener {
 		this.setLocationRelativeTo(null);
 		this.setLayout(null);
 
+		head = new JPanel();
+		head.setBounds(10, 0, 300, 30);
+
 		headLabel = new JLabel("Are You Ready?");
 		headLabel.setFont(new Font("Arial", Font.ITALIC, 15));
-		headLabel.setBounds(2, 0, 110, 30);
-		this.add(headLabel);
 
 		startButton = new Button("Go!");
 		startButton.addActionListener(this);
 		startButton.setFont(new Font("Arial", Font.ITALIC, 15));
-		startButton.setBounds(110, 0, 50, 30);
-		this.add(startButton);
 
-		contents = new JTextArea(new ReadDocument().getSentence().toString());
-		contents.setLineWrap(true);
+		head.add(headLabel);
+		head.add(startButton);
+		this.add(head);
+
+		document = new ReadDocument().getSentence().toString();
+
+		contents = new JTextPane();
 		contents.setEditable(false);
-		contents.setFont(new Font("Arial", Font.BOLD, 22));
-		contents.setBounds(0, 70, 800, 400);
+		contents.setFont(new Font("Arial", Font.BOLD, 30));
+		contents.setBounds(0, 100, 800, 350);
+		contents.requestFocus();
 		this.add(contents);
 
 		time = new JLabel("-");
@@ -74,6 +129,53 @@ public class MakeWindow extends JFrame implements ActionListener, KeyListener {
 		time.setBounds(700, 500, 800, 20);
 		this.add(time);
 
+		miss = 0;
+		missLabel = new JLabel("Miss:");
+		missLabel.setFont(new Font("Arial", Font.PLAIN, 18));
+		missLabel.setForeground(Color.RED);
+		missLabel.setBounds(100, 500, 100, 30);
+		this.add(missLabel);
+
+		result = new JPanel();
+		result.setBounds(400, 0, 200, 60);
+
+		result1 = new JLabel("[Result] ");
+		result1.setFont(new Font("Arial", Font.BOLD, 22));
+		result1.setForeground(Color.BLUE);
+
+		result2 = new JLabel("Time : ");
+		result2.setFont(new Font("Arial", Font.BOLD, 22));
+		result2.setForeground(Color.GREEN);
+
+		resultTime = new JLabel();
+		resultTime.setFont(new Font("Arial", Font.BOLD, 22));
+		resultTime.setForeground(Color.GREEN);
+
+		result3 = new JLabel("  Miss : ");
+		result3.setFont(new Font("Arial", Font.BOLD, 22));
+		result3.setForeground(Color.RED);
+
+		resultMiss = new JLabel();
+		resultMiss.setFont(new Font("Arial", Font.PLAIN, 22));
+		resultMiss.setForeground(Color.RED);
+
+		result.add(result1);
+		result.add(result2);
+		result.add(resultTime);
+		result.add(result3);
+		result.add(resultMiss);
+		this.add(result);
+
+		cursor = 0;
+		started = false;
+		format = new DecimalFormat("##0.00");
+
+		StyleContext style = new StyleContext();
+		doc = new DefaultStyledDocument(style);
+		contents.setDocument(doc);
+
+		addKeyListener(this);
+		this.setFocusable(true);
 		this.setVisible(true);
 
 		WriteLogs.writeLog("アプリ起動");
@@ -85,10 +187,45 @@ public class MakeWindow extends JFrame implements ActionListener, KeyListener {
 	 */
 	public void start() {
 		headLabel.setText("Started");
+		contents.setText(document);
+		resultTime.setText("");
+		resultMiss.setText("");
 		start = System.nanoTime();
-		new Timer().schedule(new MeasureTime(), 0, 50);
-
+		measureTime = new MeasureTime();
+		new Timer().schedule(measureTime, 0, 50);
+		started = true;
 		WriteLogs.writeLog("ゲーム開始");
+	}
+
+	/**
+	 * ゲームリセットメソッド<br>
+	 * escキーを押すとゲームを中断する
+	 */
+	public void reset() {
+		miss = 0;
+		cursor = 0;
+
+		headLabel.setText("Are You Ready?");
+		measureTime.cancel();
+		time.setText("-");
+		missLabel.setText("Miss:");
+		contents.setText("");
+		document = new ReadDocument().getSentence().toString();
+		started = false;
+		WriteLogs.writeLog("ゲームリセット");
+	}
+
+	/**
+	 * 文章の文字を開始位置から指定した文字数分赤色に変える
+	 *
+	 * @param doc-対象となる文章
+	 * @param start-開始位置
+	 * @param length-文字数
+	 */
+	public void changeColor(DefaultStyledDocument doc, int start, int length) {
+		SimpleAttributeSet sas = new SimpleAttributeSet();
+		StyleConstants.setForeground(sas, Color.RED);
+		doc.setCharacterAttributes(start, length, sas, false);
 	}
 
 	@Override
@@ -99,16 +236,33 @@ public class MakeWindow extends JFrame implements ActionListener, KeyListener {
 	@Override
 	public void keyTyped(KeyEvent e) {
 		char key = e.getKeyChar();
-		if (key == KeyEvent.VK_ESCAPE) {
-			WriteLogs.writeLog("ゲームリセット");
+		if (started && key != KeyEvent.VK_ENTER) {
+			if (document.charAt(cursor) == key) {
+				changeColor(doc, cursor++, 1);
+			} else {
+				miss++;
+				missLabel.setText("Miss: " + String.valueOf(miss));
+			}
+			if (document.length() <= cursor) {
+				resultTime.setText(format.format(elapsedTime));
+				resultMiss.setText(String.valueOf(miss));
+				reset();
+				WriteLogs.writeLog("ゲーム終了");
+			} else if (miss >= 100) {
+				reset();
+				WriteLogs.writeLog("ゲームオーバー");
+			}
 		}
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		char key = e.getKeyChar();
-		if (key == KeyEvent.VK_ESCAPE) {
-			WriteLogs.writeLog("ゲームリセット");
+		int key = e.getKeyCode();
+		if (!started && key == KeyEvent.VK_ENTER) {
+			start();
+		}
+		if (started && key == KeyEvent.VK_ESCAPE) {
+			reset();
 		}
 	}
 
@@ -125,13 +279,10 @@ public class MakeWindow extends JFrame implements ActionListener, KeyListener {
 	 */
 	class MeasureTime extends TimerTask {
 
-		/* 時間の表示フォーマット */
-		private DecimalFormat format = new DecimalFormat("##0.00");
-
 		@Override
 		public void run() {
 			long now = System.nanoTime();
-			double elapsedTime = (now - start) / 1000000000f;
+			elapsedTime = (now - start) / 1000000000f;
 			time.setText(format.format(elapsedTime));
 		}
 	}

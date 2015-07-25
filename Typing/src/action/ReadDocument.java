@@ -18,18 +18,21 @@ import org.apache.commons.lang3.RandomUtils;
 public class ReadDocument {
 
 	/* 英単語csvのパス */
-	private File file = new File("resources/vocabulary.csv");
+	private File englishFile = new File("resources/vocabulary.csv");
+
+	private File programingFile = new File("resources/program.csv");
 
 	/* ログ */
 	private StringBuilder log;
 
 	/**
-	 * 英単語csvを読み込んで文章にして返す
+	 * CSVファイルを読み込んでリストにして返す
 	 *
-	 * @return 英文
+	 * @param file
+	 *            読み込むCSVファイル
+	 * @return ファイルの中身
 	 */
-	public StringBuilder getSentence() {
-		StringBuilder typingSentence = new StringBuilder();
+	public List<String> readCSVFile(File file) {
 		List<String> vocabularies = new LinkedList<>();
 
 		/* ファイル在しない場合その旨をログに書き出す */
@@ -50,22 +53,37 @@ public class ReadDocument {
 					}
 				}
 			}
-
-			/* リストからランダムに単語を抽出し文章を生成 */
-			for (int i = 0; i < vocabularies.size(); i++) {
-				typingSentence.append(vocabularies.get(RandomUtils.nextInt(0, vocabularies.size())) + " ");
-			}
-
-			/* 文章を適度な長さで切る */
-			if (typingSentence.length() > 1000) {
-				typingSentence.replace(0, typingSentence.length(), typingSentence.substring(0, 1000));
-			}
+			WriteLogs.writeLog("Called Method [readCSVFile] class:ReadDocument");
 		} catch (IOException e) {
 
 			/* 読み込み失敗したことをログに書き出す */
 			log = new StringBuilder();
 			log.append("ファイルの読み込みに失敗しました [").append(file).append("]");
 		}
+		return vocabularies;
+	}
+
+	/**
+	 * 文章リストから文章を抜き出して文字列にして返す
+	 *
+	 * @return 文章
+	 */
+	public StringBuilder getSentence() {
+		StringBuilder typingSentence = new StringBuilder();
+		List<String> vocabularies = readCSVFile(programingFile);
+
+		/* リストからランダムに単語を抽出し文章を生成 */
+		for (int i = 0; i < vocabularies.size(); i++) {
+			typingSentence.append(vocabularies.get(RandomUtils.nextInt(0, vocabularies.size())) + " ");
+		}
+
+		/* 文章を適度な長さで切る */
+		if (typingSentence.length() > 400) {
+			typingSentence.replace(0, typingSentence.length(), typingSentence.substring(0, 400));
+		}
+
+		WriteLogs.writeLog("Called Method [getSentence] class:ReadDocument");
+
 		return typingSentence;
 	}
 }
