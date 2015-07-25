@@ -8,6 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.commons.lang3.RandomUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * ファイルを読み込む
@@ -49,7 +50,7 @@ public class ReadDocument {
 			while ((line = reader.readLine()) != null) {
 				String[] words = line.split(",");
 				for (String word : words) {
-					if (!word.equals("")) {
+					if (StringUtils.isNotBlank(word)) {
 						vocabularies.add(word);
 					}
 				}

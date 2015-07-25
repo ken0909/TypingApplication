@@ -144,7 +144,7 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 		result = new JPanel();
 		result.setBounds(400, 0, 400, 60);
 
-		result1 = new JLabel("Result ");
+		result1 = new JLabel("Result   ");
 		result1.setFont(new Font("Arial", Font.BOLD, 22));
 		result1.setForeground(Color.BLUE);
 
