@@ -1,19 +1,24 @@
-[2015/07/18 14:32:47] アプリ起動
-[2015/07/18 14:32:48] ゲーム開始
-[2015/07/18 14:32:49] ゲーム開始
-[2015/07/18 14:32:49] ゲーム開始
-[2015/07/18 14:32:49] ゲーム開始
-[2015/07/18 14:32:49] ゲーム開始
-[2015/07/18 14:32:50] ゲーム開始
-[2015/07/18 15:07:24] アプリ起動
-[2015/07/18 16:15:26] アプリ起動
-[2015/07/18 18:48:27] アプリ起動
-[2015/07/18 18:48:33] ゲーム開始
-[2015/07/18 18:49:40] アプリ起動
-[2015/07/18 18:51:07] アプリ起動
-[2015/07/18 18:52:26] アプリ起動
-[2015/07/18 18:54:20] アプリ起動
-[2015/07/18 18:54:27] ゲーム開始
-[2015/07/18 18:55:00] アプリ起動
-[2015/07/18 19:01:27] アプリ起動
-[2015/07/18 19:16:20] アプリ起動
+[2015/07/25 21:59:05] Called Method [readCSVFile] class:ReadDocument
+[2015/07/25 21:59:05] Called Method [getSentence] class:ReadDocument
+[2015/07/25 21:59:06] アプリ起動
+[2015/07/25 21:59:07] ゲーム開始
+[2015/07/25 22:01:01] Called Method [readCSVFile] class:ReadDocument
+[2015/07/25 22:01:01] Called Method [getSentence] class:ReadDocument
+[2015/07/25 22:01:01] ゲームリセット
+[2015/07/25 22:01:01] ゲーム終了
+[2015/07/25 22:04:58] Called Method [readCSVFile] class:ReadDocument
+[2015/07/25 22:04:58] Called Method [getSentence] class:ReadDocument
+[2015/07/25 22:04:59] アプリ起動
+[2015/07/25 22:05:00] ゲーム開始
+[2015/07/25 22:06:38] ゲーム終了
+[2015/07/25 22:06:46] Called Method [readCSVFile] class:ReadDocument
+[2015/07/25 22:06:46] Called Method [getSentence] class:ReadDocument
+[2015/07/25 22:06:46] ゲームリセット
+[2015/07/25 22:28:21] Called Method [readCSVFile] class:ReadDocument
+[2015/07/25 22:28:21] Called Method [getSentence] class:ReadDocument
+[2015/07/25 22:28:22] アプリ起動
+[2015/07/25 22:28:23] ゲーム開始
+[2015/07/25 22:30:04] Called Method [readCSVFile] class:ReadDocument
+[2015/07/25 22:30:04] Called Method [getSentence] class:ReadDocument
+[2015/07/25 22:30:04] ゲームリセット
+[2015/07/25 22:30:04] ゲーム終了
