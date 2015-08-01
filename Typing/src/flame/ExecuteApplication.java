@@ -15,6 +15,5 @@ public class ExecuteApplication {
 	 */
 	public static void main(String[] args) {
 		new MakeWindow();
-
 	}
 }

@@ -4,11 +4,11 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-
-import org.apache.commons.lang3.RandomUtils;
-import org.apache.commons.lang3.StringUtils;
+import java.util.Random;
 
 /**
  * ファイルを読み込む
@@ -18,39 +18,33 @@ import org.apache.commons.lang3.StringUtils;
  */
 public class ReadDocument {
 
-	/* 英単語csvのパス */
-	private File englishFile = new File("resources/vocabulary.csv");
-
-	/* プログラミング単語csvのパス */
-	private File programingFile = new File("resources/program.csv");
-
 	/* ログ */
 	private StringBuilder log;
 
 	/**
 	 * CSVファイルを読み込んでリストにして返す
 	 *
-	 * @param file
-	 *            読み込むCSVファイル
+	 * @param file:読み込むCSVファイル
 	 * @return ファイルの中身
 	 */
-	public List<String> readCSVFile(File file) {
+	public List<String> readCSVFile(String file) {
 		List<String> vocabularies = new LinkedList<>();
+		URL filePath = this.getClass().getClassLoader().getResource(file);
 
 		/* ファイル在しない場合その旨をログに書き出す */
-		if (!file.exists()) {
+		if (!new File(file).exists()) {
 			log = new StringBuilder();
 			log.append("ファイルが存在しません [").append(file).append("]");
-			WriteLogs.writeLog(log.toString());
+			WriteLogs.writeErrorLog(log.toString());
 		}
 
 		/* ファイルを読み込み、空文字以外の文字列をリストに格納 */
-		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader(filePath.getFile()))) {
 			String line;
 			while ((line = reader.readLine()) != null) {
 				String[] words = line.split(",");
 				for (String word : words) {
-					if (StringUtils.isNotBlank(word)) {
+					if (!word.equals("")) {
 						vocabularies.add(word);
 					}
 				}
@@ -61,6 +55,7 @@ public class ReadDocument {
 			/* 読み込み失敗したことをログに書き出す */
 			log = new StringBuilder();
 			log.append("ファイルの読み込みに失敗しました [").append(file).append("]");
+			WriteLogs.writeErrorLog(log.toString());
 		}
 		return vocabularies;
 	}
@@ -70,13 +65,13 @@ public class ReadDocument {
 	 *
 	 * @return 文章
 	 */
-	public StringBuilder getSentence() {
+	public String getSentence(int modeNumber) {
 		StringBuilder typingSentence = new StringBuilder();
-		List<String> vocabularies = readCSVFile(programingFile);
+		List<String> vocabularies = readCSVFile(FileEnum.getPassByNumber(modeNumber));
 
 		/* リストからランダムに単語を抽出し文章を生成 */
 		for (int i = 0; i < vocabularies.size(); i++) {
-			typingSentence.append(vocabularies.get(RandomUtils.nextInt(0, vocabularies.size())) + " ");
+			typingSentence.append(vocabularies.get(new Random().nextInt(vocabularies.size()))).append(" ");
 		}
 
 		/* 文章を適度な長さで切る */
@@ -86,6 +81,37 @@ public class ReadDocument {
 
 		WriteLogs.writeLog("Called Method [getSentence] class:ReadDocument");
 
-		return typingSentence;
+		return typingSentence.toString();
+	}
+
+	public int getRank(Double time, int gameMode) {
+		int rank = 0;
+		List<Double> results = new LinkedList<>();
+		try (BufferedReader reader = new BufferedReader(
+				new FileReader(this.getClass().getClassLoader().getResource("resources/result.log").getFile()))) {
+			String line;
+			while ((line = reader.readLine()) != null) {
+				String[] infos = line.split(" ");
+				for (String info : infos) {
+					if (info.contains("Mode")) {
+						if (FileEnum.getNumberByMode(info.substring(5)) != gameMode) {
+							break;
+						}
+					}
+					if (info.contains("Time")) {
+						results.add(Double.parseDouble(info.substring(5)));
+					}
+				}
+			}
+			Collections.sort(results);
+			rank = results.indexOf(time) + 1;
+		} catch (IOException e) {
+
+			/* 読み込み失敗したことをログに書き出す */
+			log = new StringBuilder();
+			log.append("ファイルの読み込みに失敗しました [resources/result.log]");
+			WriteLogs.writeErrorLog(log.toString());
+		}
+		return rank;
 	}
 }

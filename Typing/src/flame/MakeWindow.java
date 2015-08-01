@@ -12,8 +12,10 @@ import java.text.DecimalFormat;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.text.DefaultStyledDocument;
@@ -21,6 +23,7 @@ import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 
+import action.FileEnum;
 import action.ReadDocument;
 import action.WriteLogs;
 
@@ -95,6 +98,8 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 	/* 時間の表示フォーマット */
 	private DecimalFormat format;
 
+	private JComboBox<String> gameMode;
+
 	/**
 	 * コンストラクタ ウィンドウの各種設定とコンポーネントの作成
 	 */
@@ -106,8 +111,13 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 		this.setLocationRelativeTo(null);
 		this.setLayout(null);
 
+		gameMode = new JComboBox<>(FileEnum.getPasses());
+		gameMode.setBounds(100, 0, 600, 20);
+		gameMode.addActionListener(this);
+		this.add(gameMode);
+
 		head = new JPanel();
-		head.setBounds(10, 0, 300, 30);
+		head.setBounds(50, 20, 300, 30);
 
 		headLabel = new JLabel("Are You Ready?");
 		headLabel.setFont(new Font("Arial", Font.ITALIC, 15));
@@ -120,13 +130,11 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 		head.add(startButton);
 		this.add(head);
 
-		document = new ReadDocument().getSentence().toString();
-
 		contents = new JTextPane();
 		contents.setEditable(false);
 		contents.setFont(new Font("Arial", Font.BOLD, 30));
 		contents.setBounds(0, 100, 800, 350);
-		contents.requestFocus();
+		contents.addKeyListener(this);
 		this.add(contents);
 
 		time = new JLabel("-");
@@ -142,7 +150,7 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 		this.add(missLabel);
 
 		result = new JPanel();
-		result.setBounds(400, 0, 400, 60);
+		result.setBounds(400, 20, 400, 60);
 
 		result1 = new JLabel("Result   ");
 		result1.setFont(new Font("Arial", Font.BOLD, 22));
@@ -192,6 +200,9 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 	 * スタートボタンを押すか、Enterキーを押すと呼び出される
 	 */
 	public void start() {
+		miss = 0;
+		cursor = 0;
+
 		headLabel.setText("Started");
 		contents.setText(document);
 		resultTime.setText("");
@@ -216,7 +227,6 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 		time.setText("-");
 		missLabel.setText("Miss:");
 		contents.setText("");
-		document = new ReadDocument().getSentence().toString();
 		started = false;
 		WriteLogs.writeLog("ゲームリセット");
 	}
@@ -236,7 +246,11 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		start();
+		document = new ReadDocument().getSentence(gameMode.getSelectedIndex());
+		if (e.getSource() == startButton) {
+			start();
+		}
+		contents.requestFocusInWindow();
 	}
 
 	@Override
@@ -265,10 +279,20 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 			 * 文章の最後まで行ったらゲーム終了 結果タイムとミス回数を表示する
 			 */
 			if (document.length() <= cursor) {
-				resultTime.setText(format.format(elapsedTime));
-				resultMiss.setText(String.valueOf(miss));
+				StringBuilder resultLog = new StringBuilder();
+				StringBuilder result = new StringBuilder();
+				String time = format.format(elapsedTime);
+				String miss = String.valueOf(this.miss);
+				resultTime.setText(time);
+				resultMiss.setText(miss);
 				reset();
+				resultLog.append("Mode:").append(gameMode.getSelectedItem()).append(" Time:").append(time)
+						.append(" Miss:").append(miss);
 				WriteLogs.writeLog("ゲーム終了");
+				WriteLogs.writeResult(resultLog.toString());
+				result.append(new ReadDocument().getRank(Double.parseDouble(time), gameMode.getSelectedIndex()))
+						.append("位にランクイン！");
+				JOptionPane.showMessageDialog(this, new JLabel(result.toString()));
 			}
 		}
 	}
@@ -279,6 +303,7 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 
 		/* ゲームが開始されていない状態でEnterキーが押されたらゲームスタート */
 		if (!started && key == KeyEvent.VK_ENTER) {
+			document = new ReadDocument().getSentence(gameMode.getSelectedIndex());
 			start();
 		}
 
