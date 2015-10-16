@@ -1,44 +1,304 @@
-[2015/07/25 21:59:05] Called Method [readCSVFile] class:ReadDocument
-[2015/07/25 21:59:05] Called Method [getSentence] class:ReadDocument
-[2015/07/25 21:59:06] アプリ起動
-[2015/07/25 21:59:07] ゲーム開始
-[2015/07/25 22:01:01] Called Method [readCSVFile] class:ReadDocument
-[2015/07/25 22:01:01] Called Method [getSentence] class:ReadDocument
-[2015/07/25 22:01:01] ゲームリセット
-[2015/07/25 22:01:01] ゲーム終了
-[2015/07/25 22:04:58] Called Method [readCSVFile] class:ReadDocument
-[2015/07/25 22:04:58] Called Method [getSentence] class:ReadDocument
-[2015/07/25 22:04:59] アプリ起動
-[2015/07/25 22:05:00] ゲーム開始
-[2015/07/25 22:06:38] ゲーム終了
-[2015/07/25 22:06:46] Called Method [readCSVFile] class:ReadDocument
-[2015/07/25 22:06:46] Called Method [getSentence] class:ReadDocument
-[2015/07/25 22:06:46] ゲームリセット
-[2015/07/25 22:28:21] Called Method [readCSVFile] class:ReadDocument
-[2015/07/25 22:28:21] Called Method [getSentence] class:ReadDocument
-[2015/07/25 22:28:22] アプリ起動
-[2015/07/25 22:28:23] ゲーム開始
-[2015/07/25 22:30:04] Called Method [readCSVFile] class:ReadDocument
-[2015/07/25 22:30:04] Called Method [getSentence] class:ReadDocument
-[2015/07/25 22:30:04] ゲームリセット
-[2015/07/25 22:30:04] ゲーム終了
-[2015/07/25 23:19:13] Called Method [readCSVFile] class:ReadDocument
-[2015/07/25 23:19:13] Called Method [getSentence] class:ReadDocument
-[2015/07/25 23:19:14] アプリ起動
-[2015/07/25 23:20:25] Called Method [readCSVFile] class:ReadDocument
-[2015/07/25 23:20:25] Called Method [getSentence] class:ReadDocument
-[2015/07/25 23:20:26] アプリ起動
-[2015/07/25 23:20:32] ゲーム開始
-[2015/07/25 23:22:29] Called Method [readCSVFile] class:ReadDocument
-[2015/07/25 23:22:29] Called Method [getSentence] class:ReadDocument
-[2015/07/25 23:22:29] ゲームリセット
-[2015/07/25 23:22:29] ゲーム終了
-[2015/07/25 23:23:22] Called Method [readCSVFile] class:ReadDocument
-[2015/07/25 23:23:22] Called Method [getSentence] class:ReadDocument
-[2015/07/25 23:23:22] アプリ起動
-[2015/07/25 23:24:30] Called Method [readCSVFile] class:ReadDocument
-[2015/07/25 23:24:30] Called Method [getSentence] class:ReadDocument
-[2015/07/25 23:24:31] アプリ起動
-[2015/07/25 23:24:40] Called Method [readCSVFile] class:ReadDocument
-[2015/07/25 23:24:40] Called Method [getSentence] class:ReadDocument
-[2015/07/25 23:24:41] アプリ起動
+2015/08/01 14:07:41 [INFO] ゲーム開始
+2015/08/01 14:09:17 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 14:09:17 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 14:09:17 [INFO] ゲームリセット
+2015/08/01 14:09:17 [INFO] ゲーム終了
+2015/08/01 14:11:21 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 14:11:21 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 14:11:22 [INFO] アプリ起動
+2015/08/01 14:11:28 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 14:11:28 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 14:11:29 [INFO] アプリ起動
+2015/08/01 14:11:31 [INFO] ゲーム開始
+2015/08/01 14:13:16 [INFO] ゲーム終了
+2015/08/01 14:13:16 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 14:13:16 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 14:13:16 [INFO] ゲームリセット
+2015/08/01 16:25:51 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 16:25:51 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 16:25:52 [INFO] アプリ起動
+2015/08/01 16:25:53 [INFO] ゲーム開始
+2015/08/01 16:27:36 [INFO] ゲーム終了
+2015/08/01 16:27:36 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 16:27:36 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 16:27:36 [INFO] ゲームリセット
+2015/08/01 16:29:05 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 16:29:05 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 16:29:06 [INFO] アプリ起動
+2015/08/01 16:29:07 [INFO] ゲーム開始
+2015/08/01 16:29:15 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 16:29:15 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 16:29:15 [INFO] ゲームリセット
+2015/08/01 16:58:13 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 16:58:13 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 16:58:13 [INFO] アプリ起動
+2015/08/01 16:58:27 [INFO] ゲーム開始
+2015/08/01 16:58:40 [INFO] ゲーム開始
+2015/08/01 17:09:37 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:09:37 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:09:38 [INFO] アプリ起動
+2015/08/01 17:09:45 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:09:45 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:09:45 [INFO] ゲーム開始
+2015/08/01 17:09:57 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:09:57 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:09:57 [INFO] ゲーム開始
+2015/08/01 17:10:35 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:10:35 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:10:36 [INFO] アプリ起動
+2015/08/01 17:10:37 [INFO] ゲーム開始
+2015/08/01 17:11:16 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:11:16 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:11:16 [INFO] ゲームリセット
+2015/08/01 17:11:18 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:11:18 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:11:18 [INFO] ゲーム開始
+2015/08/01 17:11:30 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:11:30 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:11:30 [INFO] ゲーム開始
+2015/08/01 17:15:09 [INFO] アプリ起動
+2015/08/01 17:15:11 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:15:11 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:15:11 [INFO] ゲーム開始
+2015/08/01 17:15:25 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:15:25 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:15:25 [INFO] ゲーム開始
+2015/08/01 17:15:35 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:15:35 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:15:35 [INFO] ゲームリセット
+2015/08/01 17:16:15 [INFO] アプリ起動
+2015/08/01 17:16:16 [INFO] ゲーム開始
+2015/08/01 17:16:20 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:16:20 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:16:20 [INFO] ゲーム開始
+2015/08/01 17:16:33 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:16:33 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:16:33 [INFO] ゲームリセット
+2015/08/01 17:16:35 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:16:35 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:16:35 [INFO] ゲーム開始
+2015/08/01 17:16:42 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:16:42 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:16:42 [INFO] ゲームリセット
+2015/08/01 17:18:48 [INFO] アプリ起動
+2015/08/01 17:18:55 [INFO] ゲーム開始
+2015/08/01 17:19:03 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:19:03 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:19:03 [INFO] ゲーム開始
+2015/08/01 17:19:20 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:19:20 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:19:20 [INFO] ゲームリセット
+2015/08/01 17:19:35 [INFO] アプリ起動
+2015/08/01 17:19:42 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:19:42 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:19:42 [INFO] ゲーム開始
+2015/08/01 17:22:52 [INFO] アプリ起動
+2015/08/01 17:22:52 [INFO] ゲーム開始
+2015/08/01 17:28:39 [INFO] アプリ起動
+2015/08/01 17:28:39 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:28:39 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:28:39 [INFO] ゲーム開始
+2015/08/01 17:28:49 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:28:49 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:28:49 [INFO] ゲーム開始
+2015/08/01 17:28:55 [INFO] ゲームリセット
+2015/08/01 17:37:19 [INFO] アプリ起動
+2015/08/01 17:37:20 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:37:20 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:37:20 [INFO] ゲーム開始
+2015/08/01 17:37:40 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:37:40 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:37:40 [INFO] ゲーム開始
+2015/08/01 17:37:46 [INFO] ゲームリセット
+2015/08/01 17:37:48 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:37:48 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:37:48 [INFO] ゲーム開始
+2015/08/01 17:38:27 [INFO] アプリ起動
+2015/08/01 17:38:28 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:38:28 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:38:28 [INFO] ゲーム開始
+2015/08/01 17:42:16 [INFO] アプリ起動
+2015/08/01 17:42:17 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:42:17 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:42:17 [INFO] ゲーム開始
+2015/08/01 17:42:27 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:42:27 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:42:27 [INFO] ゲーム開始
+2015/08/01 17:42:48 [INFO] ゲームリセット
+2015/08/01 17:43:19 [INFO] アプリ起動
+2015/08/01 17:43:21 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:43:21 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:43:21 [INFO] ゲーム開始
+2015/08/01 17:43:31 [INFO] ゲームリセット
+2015/08/01 17:43:34 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:43:34 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:43:34 [INFO] ゲーム開始
+2015/08/01 17:43:41 [INFO] ゲームリセット
+2015/08/01 17:43:43 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:43:43 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:43:43 [INFO] ゲーム開始
+2015/08/01 17:43:52 [INFO] ゲームリセット
+2015/08/01 17:47:13 [INFO] アプリ起動
+2015/08/01 17:47:16 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 17:47:16 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 17:47:16 [INFO] ゲーム開始
+2015/08/01 18:02:19 [INFO] アプリ起動
+2015/08/01 18:02:19 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 18:02:19 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 18:02:19 [INFO] ゲーム開始
+2015/08/01 18:02:25 [INFO] ゲームリセット
+2015/08/01 18:02:28 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 18:02:28 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 18:02:31 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 18:02:31 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 18:02:31 [INFO] ゲーム開始
+2015/08/01 18:03:04 [INFO] ゲームリセット
+2015/08/01 18:03:09 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 18:03:09 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 18:03:10 [INFO] ゲーム開始
+2015/08/01 18:03:14 [INFO] ゲームリセット
+2015/08/01 18:05:52 [INFO] アプリ起動
+2015/08/01 18:05:53 [INFO] ゲーム開始
+2015/08/01 18:05:59 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 18:05:59 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 18:06:01 [INFO] ゲームリセット
+2015/08/01 18:07:31 [INFO] アプリ起動
+2015/08/01 18:07:32 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 18:07:32 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 18:07:32 [INFO] ゲーム開始
+2015/08/01 18:09:17 [INFO] ゲーム終了
+2015/08/01 18:09:27 [INFO] ゲームリセット
+2015/08/01 18:09:31 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 18:09:31 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 18:09:31 [INFO] ゲーム開始
+2015/08/01 18:11:20 [INFO] ゲーム終了
+2015/08/01 18:11:22 [INFO] ゲームリセット
+2015/08/01 18:39:59 [INFO] アプリ起動
+2015/08/01 18:40:00 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 18:40:00 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 18:40:00 [INFO] ゲーム開始
+2015/08/01 18:41:39 [INFO] ゲーム終了
+2015/08/01 18:41:39 [INFO] ゲームリセット
+2015/08/01 18:49:00 [INFO] アプリ起動
+2015/08/01 18:54:04 [INFO] アプリ起動
+2015/08/01 18:54:05 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 18:54:05 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 18:54:05 [INFO] ゲーム開始
+2015/08/01 18:55:41 [INFO] ゲームリセット
+2015/08/01 18:55:41 [INFO] ゲーム終了
+2015/08/01 18:57:28 [INFO] アプリ起動
+2015/08/01 18:57:34 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 18:57:34 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 18:57:34 [INFO] ゲーム開始
+2015/08/01 18:59:18 [INFO] ゲームリセット
+2015/08/01 18:59:18 [INFO] ゲーム終了
+2015/08/01 19:01:11 [INFO] アプリ起動
+2015/08/01 19:01:12 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 19:01:12 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 19:01:12 [INFO] ゲーム開始
+2015/08/01 19:02:55 [INFO] ゲームリセット
+2015/08/01 19:02:55 [INFO] ゲーム終了
+2015/08/01 19:04:21 [INFO] アプリ起動
+2015/08/01 19:04:24 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 19:04:24 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 19:04:24 [INFO] ゲーム開始
+2015/08/01 19:06:02 [INFO] ゲームリセット
+2015/08/01 19:06:02 [INFO] ゲーム終了
+2015/08/01 19:26:19 [INFO] アプリ起動
+2015/08/01 19:26:20 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 19:26:20 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 19:26:20 [INFO] ゲーム開始
+2015/08/01 19:28:03 [INFO] ゲームリセット
+2015/08/01 19:28:03 [INFO] ゲーム終了
+2015/08/01 19:41:26 [INFO] アプリ起動
+2015/08/01 19:41:27 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 19:41:27 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 19:41:27 [INFO] ゲーム開始
+2015/08/01 19:43:12 [INFO] ゲームリセット
+2015/08/01 19:43:12 [INFO] ゲーム終了
+2015/08/01 19:43:17 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 19:43:17 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 19:43:18 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 19:43:18 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 19:43:18 [INFO] ゲーム開始
+2015/08/01 19:45:03 [INFO] ゲームリセット
+2015/08/01 19:45:03 [INFO] ゲーム終了
+2015/08/01 19:59:56 [INFO] アプリ起動
+2015/08/01 19:59:57 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 19:59:57 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 19:59:57 [INFO] ゲーム開始
+2015/08/01 20:00:02 [INFO] ゲームリセット
+2015/08/01 20:00:20 [INFO] アプリ起動
+2015/08/01 20:00:21 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 20:00:21 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 20:00:21 [INFO] ゲーム開始
+2015/08/01 20:00:25 [INFO] ゲームリセット
+2015/08/01 20:04:53 [INFO] アプリ起動
+2015/08/01 20:04:54 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 20:04:54 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 20:04:54 [INFO] ゲーム開始
+2015/08/01 20:05:20 [INFO] アプリ起動
+2015/08/01 20:05:21 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 20:05:21 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 20:05:21 [INFO] ゲーム開始
+2015/08/01 20:05:30 [INFO] ゲームリセット
+2015/08/01 22:22:33 [INFO] アプリ起動
+2015/08/01 22:22:36 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 22:22:36 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 22:22:37 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 22:22:37 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 22:22:37 [INFO] ゲーム開始
+2015/08/01 22:23:08 [INFO] ゲームリセット
+2015/08/01 22:23:11 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 22:23:11 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 22:23:18 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 22:23:18 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 22:23:18 [INFO] ゲーム開始
+2015/08/01 22:24:51 [INFO] ゲームリセット
+2015/08/01 22:24:51 [INFO] ゲーム終了
+2015/08/01 22:25:37 [INFO] アプリ起動
+2015/08/01 22:37:21 [INFO] アプリ起動
+2015/08/01 22:37:22 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 22:37:22 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 22:37:22 [INFO] ゲーム開始
+2015/08/01 22:37:25 [INFO] ゲームリセット
+2015/08/01 22:50:22 [INFO] アプリ起動
+2015/08/01 22:50:22 [ERROR] ファイルの読み込みに失敗しました [resources/vocabulary.csv]
+2015/08/01 22:50:22 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 22:50:22 [INFO] ゲーム開始
+2015/08/01 22:52:36 [INFO] アプリ起動
+2015/08/01 22:52:36 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/01 22:52:36 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/01 22:52:36 [INFO] ゲーム開始
+2015/08/01 22:52:38 [INFO] ゲームリセット
+2015/08/02 14:14:23 [INFO] アプリ起動
+2015/08/02 14:14:24 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/02 14:14:24 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/02 14:14:24 [INFO] ゲーム開始
+2015/08/02 14:16:08 [INFO] ゲームリセット
+2015/08/02 14:16:08 [INFO] ゲーム終了
+2015/08/08 15:38:43 [INFO] アプリ起動
+2015/08/08 15:38:44 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/08/08 15:38:44 [INFO] Called Method [getSentence] class:ReadDocument
+2015/08/08 15:38:44 [INFO] ゲーム開始
+2015/08/08 15:38:47 [INFO] ゲームリセット
+2015/09/03 19:46:28 [INFO] アプリ起動
+2015/09/03 19:46:30 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/09/03 19:46:30 [INFO] Called Method [getSentence] class:ReadDocument
+2015/09/03 19:46:30 [INFO] ゲーム開始
+2015/09/03 19:48:14 [INFO] ゲームリセット
+2015/09/03 19:48:14 [INFO] ゲーム終了
+2015/09/03 20:18:53 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/09/03 20:18:53 [INFO] Called Method [getSentence] class:ReadDocument
+2015/09/03 20:18:53 [INFO] ゲーム開始
+2015/09/03 20:20:32 [INFO] ゲームリセット
+2015/09/03 20:20:32 [INFO] ゲーム終了
+2015/09/03 20:20:40 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/09/03 20:20:40 [INFO] Called Method [getSentence] class:ReadDocument
+2015/09/03 20:20:40 [INFO] ゲーム開始
+2015/09/03 20:20:42 [INFO] ゲームリセット
+2015/09/03 21:03:15 [INFO] Called Method [readCSVFile] class:ReadDocument
+2015/09/03 21:03:15 [INFO] Called Method [getSentence] class:ReadDocument
+2015/09/03 21:03:15 [INFO] ゲーム開始
+2015/09/03 21:04:52 [INFO] ゲームリセット
+2015/09/03 21:04:52 [INFO] ゲーム終了

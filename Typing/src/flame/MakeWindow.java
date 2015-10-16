@@ -98,6 +98,7 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 	/* 時間の表示フォーマット */
 	private DecimalFormat format;
 
+	/* ゲームモード選択 */
 	private JComboBox<String> gameMode;
 
 	/**
@@ -257,27 +258,25 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 	public void keyTyped(KeyEvent e) {
 		char key = e.getKeyChar();
 
-		/* 開始フラグがtrueで、押されたキーがEnterでない場合 */
+		// 開始フラグがtrueで、押されたキーがEnterでない場合
 		if (started && key != KeyEvent.VK_ENTER) {
 
-			/* カーソル現在位置の文字と押されたキーが一致した場合カーソルを右に移動し、一文字分赤色にする */
+			// カーソル現在位置の文字と押されたキーが一致した場合カーソルを右に移動し、一文字分赤色にする
 			if (document.charAt(cursor) == key) {
 				changeColor(doc, cursor++, 1);
 
-				/* ミスの場合はミスのカウントをインクリメントし表示する */
+				// ミスの場合はミスのカウントをインクリメントし表示する
 			} else {
 				miss++;
 				missLabel.setText("Miss: " + String.valueOf(miss));
 			}
-			/* ミスが１００を超えたら強制終了 */
+			// ミスが１００を超えたら強制終了
 			if (miss >= 100) {
 				reset();
 				WriteLogs.writeLog("ゲームオーバー");
 			}
 
-			/*
-			 * 文章の最後まで行ったらゲーム終了 結果タイムとミス回数を表示する
-			 */
+			// 文章の最後まで行ったらゲーム終了 結果タイムとミス回数を表示する
 			if (document.length() <= cursor) {
 				StringBuilder resultLog = new StringBuilder();
 				StringBuilder result = new StringBuilder();
@@ -301,13 +300,13 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 	public void keyPressed(KeyEvent e) {
 		int key = e.getKeyCode();
 
-		/* ゲームが開始されていない状態でEnterキーが押されたらゲームスタート */
+		// ゲームが開始されていない状態でEnterキーが押されたらゲームスタート
 		if (!started && key == KeyEvent.VK_ENTER) {
 			document = new ReadDocument().getSentence(gameMode.getSelectedIndex());
 			start();
 		}
 
-		/* ゲームが開始されている状態でescキーが押されたらゲーム終了 */
+		// ゲームが開始されている状態でescキーが押されたらゲーム終了
 		if (started && key == KeyEvent.VK_ESCAPE) {
 			reset();
 		}
@@ -329,7 +328,7 @@ public class MakeWindow extends JFrame implements KeyListener, ActionListener {
 		@Override
 		public void run() {
 
-			/* 経過時間を測定しリアルタイムで表示 */
+			// 経過時間を測定しリアルタイムで表示
 			long now = System.nanoTime();
 			elapsedTime = (now - start) / 1000000000f;
 			time.setText(format.format(elapsedTime));
